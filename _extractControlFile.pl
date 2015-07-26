@@ -24,6 +24,7 @@ while(<F>) {
 	}
 	if($START eq "1" && $END == "0") {
 		$_ =~ s/REUSE DATABASE/SET DATABASE/g;
+		$_ =~ s/NORESETLOGS/RESETLOGS/g;
 		$_ =~ s/$DB_IN/$DB_OUT/g;
 		print O $_;
 	}
